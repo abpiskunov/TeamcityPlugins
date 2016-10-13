@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="httpcomponents-client-4.2.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/newdirectory-build-trigger-server/lib/commons-codec-1.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/newdirectory-build-trigger-server/lib/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/newdirectory-build-trigger-server/lib/httpclient-4.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/newdirectory-build-trigger-server/lib/httpcore-4.2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

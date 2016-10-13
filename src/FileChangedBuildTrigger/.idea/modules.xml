@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/filechanged-build-trigger.iml" filepath="$PROJECT_DIR$/filechanged-build-trigger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/filechanged-build-trigger-server/filechanged-build-trigger-server.iml" filepath="$PROJECT_DIR$/filechanged-build-trigger-server/filechanged-build-trigger-server.iml" />
+    </modules>
+  </component>
+</project>

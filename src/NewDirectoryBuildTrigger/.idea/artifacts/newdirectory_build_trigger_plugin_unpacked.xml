@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact name="newdirectory-build-trigger-plugin-unpacked">
+    <output-path>$PROJECT_DIR$/out/artifacts/newdirectory_build_trigger_plugin_unpacked</output-path>
+    <properties id="ant-postprocessing">
+      <options enabled="true">
+        <file>file://$PROJECT_DIR$/build.xml</file>
+        <target>replace-tokens-in-teamcity-plugin-xml</target>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="server">
+        <element id="archive" name="newdirectory-build-trigger.jar">
+          <element id="module-output" name="newdirectory-build-trigger-server" />
+          <element id="directory" name="buildServerResources">
+            <element id="dir-copy" path="$PROJECT_DIR$/newdirectory-build-trigger-server/resource/buildServerResources" />
+          </element>
+        </element>
+        <element id="dir-copy" path="$PROJECT_DIR$/newdirectory-build-trigger-server/lib" />
+      </element>
+      <element id="file-copy" path="$PROJECT_DIR$/teamcity-plugin.xml" output-file-name="teamcity-plugin.xml" />
+    </root>
+  </artifact>
+</component>
