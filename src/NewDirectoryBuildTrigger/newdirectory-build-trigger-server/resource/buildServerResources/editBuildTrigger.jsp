@@ -21,6 +21,17 @@
 </tr>
 
 <tr class="noBorder" >
+    <td><label for="<%=BuildTrigger.NEWDIRECTORY_PARAM%>">Result parameter name</label></td>
+    <td>
+        <props:textProperty name="<%=BuildTrigger.NEWDIRECTORY_PARAM%>" style="width:100%;"/>
+        <span class="smallNote">
+          Name of the parameter added to build and containing new sub folder name.
+      </span>
+        <span class="error" id="error_<%=BuildTrigger.NEWDIRECTORY_PARAM%>"></span>
+    </td>
+</tr>
+
+<tr class="noBorder" >
     <td><label for="<%=BuildTrigger.POLL_INTERVAL_PARAM%>">Polling interval</label></td>
     <td>
        <props:textProperty name="<%=BuildTrigger.POLL_INTERVAL_PARAM%>" style="width:10em;"/>
