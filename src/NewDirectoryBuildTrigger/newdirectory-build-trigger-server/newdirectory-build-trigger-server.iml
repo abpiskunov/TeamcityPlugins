@@ -16,5 +16,6 @@
     <orderEntry type="library" name="commons-io-2.4" level="project" />
     <orderEntry type="library" name="commons-net-3.1" level="project" />
     <orderEntry type="library" name="httpcomponents-client-4.2.1" level="project" />
+    <orderEntry type="library" name="openapi" level="project" />
   </component>
 </module>

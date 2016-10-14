@@ -1,34 +1,42 @@
 package newdirectoryBuildTrigger;
 
-import jetbrains.buildServer.buildTriggers.*;
+import jetbrains.buildServer.buildTriggers.BuildTriggerDescriptor;
+import jetbrains.buildServer.buildTriggers.BuildTriggerService;
+import jetbrains.buildServer.buildTriggers.BuildTriggeringPolicy;
+import jetbrains.buildServer.serverSide.BuildCustomizerFactory;
+import jetbrains.buildServer.serverSide.BuildServerListener;
 import jetbrains.buildServer.serverSide.InvalidProperty;
 import jetbrains.buildServer.serverSide.PropertiesProcessor;
-import jetbrains.buildServer.serverSide.SBuildType;
+import jetbrains.buildServer.util.EventDispatcher;
 import jetbrains.buildServer.web.openapi.PluginDescriptor;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
-import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 public final class BuildTrigger extends BuildTriggerService {
-  public static String PLUGIN_NAME = "newDirectoryBuildTrigger";
+  public static String PLUGIN_NAME = "NewDirectoryBuildTrigger";
   public static String PLUGIN_DISPLAY_NAME = "New directory build trigger";
   public static String PLUGIN_DESCRIPTION = "Wait for a sub directory under given path";
 
   public static String PATHTOMONITOR_PARAM = "pathtomonitor.build.trigger.newdirectory";
+  public static String NEWDIRECTORY_PARAM = "newdirectoryparam.build.trigger.newdirectory";
   public static String POLL_INTERVAL_PARAM = "poll.interval.build.trigger.newdirectory";
-  private static final Integer DEFAULT_POLL_INTERVAL = 30;
+  public static final Integer DEFAULT_POLL_INTERVAL = 30;
+  public static String DEFAULT_NEWFOLDER_PARAM = "TEAMCITY_NEW_DIRECTORY_NAME";
 
   @NotNull
-  private final PluginDescriptor myPluginDescriptor;
+  private final PluginDescriptor pluginDescriptor;
+  @NotNull
+  private final NewDirectoryBuildTriggerPolicy policy;
 
-  public BuildTrigger(@NotNull final PluginDescriptor pluginDescriptor) {
-    myPluginDescriptor = pluginDescriptor;
+  public BuildTrigger(final PluginDescriptor pluginDescriptor,
+                      final EventDispatcher<BuildServerListener> buildServerListener,
+                      final BuildCustomizerFactory buildCustomizerFactory) {
+    this.policy = new NewDirectoryBuildTriggerPolicy( buildCustomizerFactory);
+    this.pluginDescriptor = pluginDescriptor;
   }
 
   @NotNull
@@ -52,92 +60,7 @@ public final class BuildTrigger extends BuildTriggerService {
   @NotNull
   @Override
   public BuildTriggeringPolicy getBuildTriggeringPolicy() {
-    return new PolledBuildTrigger() {
-      @Override
-      public void triggerBuild(@NotNull PolledTriggerContext context) throws BuildTriggerException {
-        final Map<String, String> props = context.getTriggerDescriptor().getProperties();
-
-        try
-        {
-          final String pathToMonitor = props.get(PATHTOMONITOR_PARAM);
-          if (pathToMonitor == null || pathToMonitor.isEmpty() || Files.notExists(Paths.get(pathToMonitor)))
-          {
-            return;
-          }
-
-          File[] directories = new File(pathToMonitor).listFiles(File::isDirectory);
-          if (directories.length <= 0)
-          {
-            return;
-          }
-
-          HashSet<String> oldChildren = new HashSet<String>();
-          HashSet<String> newChildren = new HashSet<String>();
-          for (File subDirectory : directories)
-          {
-            newChildren.add(subDirectory.getName());
-          }
-
-          boolean shouldTrigger = false;
-          String oldSubDirectoriesString = context.getCustomDataStorage().getValue(pathToMonitor);
-          if (oldSubDirectoriesString == null || oldSubDirectoriesString.isEmpty())
-          {
-            shouldTrigger = true;
-          }
-          else
-          {
-            oldChildren.addAll(Arrays.asList(oldSubDirectoriesString.split(";")));
-          }
-
-          if (!shouldTrigger && !oldChildren.containsAll(newChildren))
-          {
-            // there are some new sub directories
-            shouldTrigger = true;
-          }
-
-          oldChildren.addAll(newChildren);
-          String storeDirectoriesString = "";
-          for(String old : oldChildren)
-          {
-            if (newChildren.contains(old))
-            {
-              if (!storeDirectoriesString.isEmpty())
-              {
-                storeDirectoriesString += ";";
-              }
-              storeDirectoriesString = storeDirectoriesString + old;
-            }
-          }
-
-          context.getCustomDataStorage()
-                  .putValue(pathToMonitor, storeDirectoriesString);
-
-          if (shouldTrigger == true) {
-            SBuildType buildType = context.getBuildType();
-            buildType.addToQueue(getDisplayName());
-          }
-        } catch (Exception e) {
-          throw new BuildTriggerException(getDisplayName() + " failed with error: " + e.getMessage(), e);
-        }
-      }
-
-      @Override
-      public int getPollInterval(@NotNull PolledTriggerContext context) {
-        final Map<String, String> props = context.getTriggerDescriptor().getProperties();
-
-        final String poll_interval = props.get(POLL_INTERVAL_PARAM);
-
-        if (poll_interval == null) {
-                return DEFAULT_POLL_INTERVAL;
-        }
-
-        try {
-          return Integer.parseInt(poll_interval);
-        } catch (NumberFormatException e) {
-          return DEFAULT_POLL_INTERVAL;
-        }
-      }
-    };
+    return policy;
   }
 
   @Override
@@ -152,7 +75,7 @@ public final class BuildTrigger extends BuildTriggerService {
 
   @Override
   public String getEditParametersUrl() {
-    return myPluginDescriptor.getPluginResourcesPath("editBuildTrigger.jsp");
+    return pluginDescriptor.getPluginResourcesPath("editBuildTrigger.jsp");
   }
 
   @Override
