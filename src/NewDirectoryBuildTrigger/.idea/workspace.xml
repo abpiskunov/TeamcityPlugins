@@ -71,7 +71,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="editBuildTrigger.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="editBuildTrigger.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/newdirectory-build-trigger-server/resource/buildServerResources/editBuildTrigger.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="544">
@@ -94,11 +94,25 @@
       <file leaf-file-name="BuildTrigger.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/newdirectory-build-trigger-server/src/newdirectoryBuildTrigger/BuildTrigger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+            <state relative-caret-position="201">
+              <caret line="18" column="31" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="31" />
               <folding>
-                <element signature="e#2379#2387#0" expanded="true" />
-                <element signature="e#2442#2450#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1910#1911#0" expanded="true" />
+                <element signature="e#1933#1934#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BuildTriggerPolicy.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/newdirectory-build-trigger-server/src/newdirectoryBuildTrigger/BuildTriggerPolicy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="706">
+              <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3587#3603#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -108,7 +122,7 @@
         <entry file="file://$PROJECT_DIR$/newdirectory-build-trigger-server/newdirectory-build-trigger-server.iml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+              <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -128,17 +142,7 @@
         <entry file="file://$PROJECT_DIR$/newdirectory-build-trigger.iml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TeamCity_tests_support.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/libraries/TeamCity_tests_support.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -176,6 +180,13 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="FindManager">
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
@@ -212,6 +223,7 @@
         <option value="$PROJECT_DIR$/newdirectory-build-trigger-server/src/META-INF/build-server-plugin.xml" />
         <option value="$PROJECT_DIR$/newdirectory-build-trigger-server/resource/buildServerResources/editBuildTrigger.jsp" />
         <option value="$PROJECT_DIR$/newdirectory-build-trigger-server/src/newdirectoryBuildTrigger/BuildTrigger.java" />
+        <option value="$PROJECT_DIR$/newdirectory-build-trigger-server/src/newdirectoryBuildTrigger/BuildTriggerPolicy.java" />
       </list>
     </option>
   </component>
@@ -258,9 +270,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -375,17 +384,20 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$TeamCityDistribution$/webapps/ROOT/WEB-INF/lib/openapi.jar!/" />
     <property name="project.structure.side.proportion" value="0.5235903" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -850,11 +862,12 @@
       <workItem from="1476382766473" duration="151000" />
       <workItem from="1476383120632" duration="531000" />
       <workItem from="1476383676830" duration="4127000" />
+      <workItem from="1476404327951" duration="1825000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28370000" />
+    <option name="totallyTimeSpent" value="30195000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1874" height="1216" extended-state="6" />
@@ -867,8 +880,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963988" sideWeight="0.5022051" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19575255" sideWeight="0.49779493" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -916,13 +929,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/newdirectory-build-trigger.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/newdirecory-build-trigger.properties" />
     <entry file="file://$PROJECT_DIR$/newdirecory-build-trigger.xml" />
     <entry file="file://$PROJECT_DIR$/teamcity-plugin.xml">
@@ -1141,7 +1147,7 @@
     <entry file="file://$PROJECT_DIR$/newdirectory-build-trigger-server/newdirectory-build-trigger-server.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -1157,7 +1163,7 @@
     <entry file="file://$PROJECT_DIR$/newdirectory-build-trigger.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1170,22 +1176,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/newdirectory-build-trigger-server/src/newdirectoryBuildTrigger/BuildTrigger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
-          <folding>
-            <element signature="e#2379#2387#0" expanded="true" />
-            <element signature="e#2442#2450#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/newdirectory-build-trigger-server/resource/buildServerResources/editBuildTrigger.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newdirectory-build-trigger-server/src/newdirectoryBuildTrigger/BuildTrigger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="18" column="31" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1910#1911#0" expanded="true" />
+            <element signature="e#1933#1934#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newdirectory-build-trigger-server/src/newdirectoryBuildTrigger/BuildTriggerPolicy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="706">
+          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3587#3603#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1256,7 +1274,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>TeamCity-tests-support</last-edited>
+          <last-edited>openapi</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
