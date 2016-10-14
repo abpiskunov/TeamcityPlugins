@@ -24,7 +24,7 @@ public final class BuildTrigger extends BuildTriggerService {
   public static String PATHTOMONITOR_PARAM = "pathtomonitor.build.trigger.newdirectory";
   public static String NEWDIRECTORY_PARAM = "newdirectoryparam.build.trigger.newdirectory";
   public static String POLL_INTERVAL_PARAM = "poll.interval.build.trigger.newdirectory";
-  private static final Integer DEFAULT_POLL_INTERVAL = 30;
+  public static final Integer DEFAULT_POLL_INTERVAL = 30;
   public static String DEFAULT_NEWFOLDER_PARAM = "TEAMCITY_NEW_DIRECTORY_NAME";
 
   @NotNull

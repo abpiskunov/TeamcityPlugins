@@ -6,5 +6,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="filechanged-build-trigger-server" />
+    <orderEntry type="library" name="openapi" level="project" />
   </component>
 </module>

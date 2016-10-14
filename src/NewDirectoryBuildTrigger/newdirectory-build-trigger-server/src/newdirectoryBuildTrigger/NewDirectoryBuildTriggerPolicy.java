@@ -9,6 +9,8 @@ import jetbrains.buildServer.log.Loggers;
 import jetbrains.buildServer.serverSide.BuildCustomizer;
 import jetbrains.buildServer.serverSide.BuildCustomizerFactory;
 import jetbrains.buildServer.serverSide.BuildPromotion;
+import org.jetbrains.annotations.NotNull;
+
 import java.io.File;
 import java.util.*;
 
@@ -123,6 +125,23 @@ public class NewDirectoryBuildTriggerPolicy extends PolledBuildTrigger {
             LOG.error("error while trying to trigger build for '" + pathToMonitor + "'", e);
             throw new BuildTriggerException(
                     BuildTrigger.PLUGIN_DISPLAY_NAME + " failed with error: " + e.getMessage(), e);
+        }
+    }
+
+    @Override
+    public int getPollInterval(@NotNull PolledTriggerContext context) {
+        final Map<String, String> props = context.getTriggerDescriptor().getProperties();
+
+        final String poll_interval = props.get(BuildTrigger.POLL_INTERVAL_PARAM);
+
+        if (poll_interval == null) {
+            return BuildTrigger.DEFAULT_POLL_INTERVAL;
+        }
+
+        try {
+            return Integer.parseInt(poll_interval);
+        } catch (NumberFormatException e) {
+            return BuildTrigger.DEFAULT_POLL_INTERVAL;
         }
     }
 }
